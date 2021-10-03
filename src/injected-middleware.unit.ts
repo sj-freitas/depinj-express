@@ -1,4 +1,4 @@
-import { NextFunction, Request, response, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { Injector, Builder, ScopeType } from 'depinj-js';
 
 import { toInjectedMiddleware } from './injected-middleware';
@@ -71,7 +71,7 @@ describe('toInjectedMiddleware', () => {
         .build();
 
       // Act
-      const injector = new Injector({ stuff: 'banana' }, registry);
+      const injector = new Injector(registry);
       const handler = toInjectedMiddleware(injector, LoggingMiddleware);
 
       // Assert
@@ -91,7 +91,7 @@ describe('toInjectedMiddleware', () => {
         .addType('IncrementingMiddleware', IncrementingMiddleware, ['Counter'], ScopeType.OnDemand)
         .build();
 
-      const injector = new Injector({}, registry);
+      const injector = new Injector(registry);
 
       // Simulate two web requests
       const request1: Request = {} as Request;
@@ -139,7 +139,7 @@ describe('toInjectedMiddleware', () => {
         .addType('IncrementingMiddleware', IncrementingMiddleware, ['Counter'], ScopeType.OnDemand)
         .build();
 
-      const injector = new Injector({}, registry);
+      const injector = new Injector(registry);
       const handler = toInjectedMiddleware(injector, IncrementingMiddleware);
 
       // Act
