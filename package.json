@@ -1,6 +1,6 @@
 {
   "name": "depinj-express",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An integration of depinj to work with express",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
