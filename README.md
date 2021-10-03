@@ -40,8 +40,8 @@ const getValueHandler = (counter) => (req, res, next) => {
 // Registering instances
 const builder = new Builder()
     .addType('RequestsCounter', RequestsCounter, [], ScopeType.SingleInstance)
-    .add('IncrementingMiddleware', (_, inj) => incrementHandler(inj.getService('Counter')), ScopeType.Transient)
-    .add('GetValueMiddleware', (_, inj) => getValueHandler(inj.getService('Counter')), ScopeType.Transient);
+    .add('IncrementingMiddleware', (_, inj) => incrementHandler(inj.getService('RequestsCounter')), ScopeType.Transient)
+    .add('GetValueMiddleware', (_, inj) => getValueHandler(inj.getService('RequestsCounter')), ScopeType.Transient);
 
 const registry = builder.build();
 
