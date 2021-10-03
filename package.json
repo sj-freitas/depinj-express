@@ -1,6 +1,6 @@
 {
   "name": "depinj-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An integration of depinj to work with express",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,9 +16,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sj-freitas/depinj/issues"
+    "url": "https://github.com/sj-freitas/depinj-express/issues"
   },
-  "homepage": "https://github.com/sj-freitas/depinj#readme",
+  "homepage": "https://github.com/sj-freitas/depinj-express/tree/1.0.1#readme",
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
