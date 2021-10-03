@@ -24,7 +24,7 @@ export interface InjectableMiddleware {
  */
 export function toInjectedMiddleware<TContext, TMiddleware extends InjectableMiddleware>(
   injector: Injector<TContext>,
-  DependentType: new (...args: any[]) => TMiddleware | string
+  DependentType: (new (...args: any[]) => TMiddleware) | string
 ) {
   async function handler(req: Request, res: Response, next: NextFunction): Promise<void> {
     // Create the scope for the specific request.
