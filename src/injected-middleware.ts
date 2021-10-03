@@ -2,12 +2,14 @@ import { NextFunction, Request, Response } from 'express';
 
 import { Injector } from 'depinj-js';
 
+type Handler = (req: Request, res: Response, next: NextFunction) => Promise<void>;
+
 /**
  * Helper interface to represent a type that has a method that does the handle behavior but that instead
  * of just using a simple function, it needs to be a type that can be resolved.
  */
 export interface InjectableMiddleware {
-  handle(req: Request, res: Response, next: NextFunction): Promise<void>;
+  handle: Handler;
 }
 
 /**
@@ -35,10 +37,17 @@ export function toInjectedMiddleware<TContext, TMiddleware extends InjectableMid
 
     // Get the middleware to execute
     const serviceName = typeof DependentType === 'string' ? DependentType : DependentType.name;
-    const scopedHandler = scoped.getService(serviceName) as TMiddleware;
+    const scopedHandler = scoped.getService(serviceName) as TMiddleware | Handler;
 
     // Call the handle method, the handler now has the scoped dependencies.
-    await scopedHandler.handle(req, res, next);
+    let handler: Handler;
+    if (typeof scopedHandler === 'function') {
+      handler = scopedHandler;
+    } else {
+      handler = scopedHandler.handle.bind(scopedHandler);
+    }
+
+    await handler(req, res, next);
   }
 
   return handler;
