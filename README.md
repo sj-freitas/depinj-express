@@ -29,19 +29,19 @@ class RequestsCounter {
 }
 
 const incrementHandler = (counter) => (req, res, next) => {
-    counter.increment();
-    next();
+  counter.increment();
+  next();
 }
 const getValueHandler = (counter) => (req, res, next) => {
-    res.json({ value: counter.getValue() });
-    next();
+  res.json({ value: counter.getValue() });
+  next();
 }
 
 // Registering instances
 const builder = new Builder()
-    .addType('RequestsCounter', RequestsCounter, [], ScopeType.SingleInstance)
-    .add('IncrementingMiddleware', (_, inj) => incrementHandler(inj.getService('RequestsCounter')), ScopeType.Transient)
-    .add('GetValueMiddleware', (_, inj) => getValueHandler(inj.getService('RequestsCounter')), ScopeType.Transient);
+  .addType('RequestsCounter', RequestsCounter, [], ScopeType.SingleInstance)
+  .add('IncrementingMiddleware', (_, inj) => incrementHandler(inj.getService('RequestsCounter')), ScopeType.Transient)
+  .add('GetValueMiddleware', (_, inj) => getValueHandler(inj.getService('RequestsCounter')), ScopeType.Transient);
 
 const registry = builder.build();
 
