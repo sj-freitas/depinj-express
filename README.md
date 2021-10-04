@@ -1,5 +1,5 @@
 # depinj-express
-An integration of [depinj](https://github.com/sj-freitas/depinj) with [express](https://github.com/expressjs/express). 
+An integration of [depinj](https://github.com/sj-freitas/depinj#readme) with [express](https://github.com/expressjs/express#readme). 
 
 ## Usage
 
@@ -55,7 +55,7 @@ router.post('/counter', counterHandler);
 router.get('/counter', showCounterHandler);
 ```
 
-Check the [example repository](https://github.com/sj-freitas/depinj-express-example) for more use cases.
+Check the [example repository](https://github.com/sj-freitas/depinj-express-example#readme) for more use cases.
 
 ## How it works?
 This works by injecting the dependency context to the express request, this means that it's the request that keeps the instances state. Also it ensures that the `onScopeEnd` function is called by binding it with the `res.on('finish)` event.
