@@ -1,6 +1,6 @@
 {
   "name": "depinj-express",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An integration of depinj to work with express",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "directory": "https://github.com/sj-freitas/depinj-express"
+    "url": "https://github.com/sj-freitas/depinj-express"
   },
   "author": "https://github.com/sj-freitas",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "url": "https://github.com/sj-freitas/depinj-express/issues"
   },
   "keywords": ["dependency-injection", "di", "ioc", "express"],
-  "homepage": "https://github.com/sj-freitas/depinj-express/tree/2.0.0#readme",
+  "homepage": "https://github.com/sj-freitas/depinj-express/tree/2.0.1#readme",
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
