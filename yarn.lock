@@ -1311,10 +1311,10 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
-depinj-js@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/depinj-js/-/depinj-js-1.5.3.tgz#8b01b30a1fe5c25a2f905af9e96227c2298dbb7c"
-  integrity sha512-P/U7Cjp5l5sTMiHecmQmTnxpgSIR4xmtESiKnXAhikdcyNhUwG9ShvW5v2ju4kUSR2MaAmvgJwGmhwEbaTWOMQ==
+depinj-js@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/depinj-js/-/depinj-js-1.5.5.tgz#87bc30bc7a7dae68b44db0e9b3fbac05639d7f0b"
+  integrity sha512-e9kECWUDu0AW5aW/Mqk6U24UD20V1+8LmqGkaofmO4bPaWciUV45OE0BQS3UtlKDat+FlUaYvB53UsQIOdy5dg==
 
 destroy@~1.0.4:
   version "1.0.4"

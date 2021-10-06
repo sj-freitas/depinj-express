@@ -47,8 +47,8 @@ const registry = builder.build();
 
 // Retrieving instances
 const injector = new Injector(registry);
-const counterHandler = toInjectedMiddleware(injector, 'IncrementingMiddleware');
-const showCounterHandler = toInjectedMiddleware(injector, 'GetValueMiddleware');
+const counterHandler = toInjectedHandler(injector, 'IncrementingMiddleware');
+const showCounterHandler = toInjectedHandler(injector, 'GetValueMiddleware');
 const router = Router();
 
 router.post('/counter', counterHandler);
@@ -60,4 +60,6 @@ Check the [example repository](https://github.com/sj-freitas/depinj-express-exam
 ## How it works?
 This works by injecting the dependency context to the express request, this means that it's the request that keeps the instances state. Also it ensures that the `onScopeEnd` function is called by binding it with the `res.on('finish)` event.
 
-To inject a middleware to an `Injector`, all that's needed is for the middleware to be registered as a service, this means that the middleware needs to be in the `Register`. Once that is done, just call the function `toInjectedMiddleware` with the `Injector` instance and the service key. This function will return an express `handler`.
+To inject a middleware to an `Injector`, all that's needed is for the middleware to be registered as a service, this means that the middleware needs to be in the `Register`. Once that is done, just call the function `toInjectedHandler` with the `Injector` instance and the service key. This function will return an express `handler`.
+
+For error handlers, there's also a `toInjectedErrorHandler` function with similar behavior.

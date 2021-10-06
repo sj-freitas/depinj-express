@@ -1,3 +1,17 @@
-import { InjectableMiddleware, toInjectedMiddleware } from './injected-middleware';
+import {
+  InjectableHandler,
+  Handler,
+  HandlerTypes,
+  ErrorHandler,
+  toInjectedHandler,
+  toInjectedErrorHandler
+} from './injected-handler';
 
-export { InjectableMiddleware, toInjectedMiddleware };
+export {   
+  InjectableHandler,
+  Handler,
+  HandlerTypes,
+  ErrorHandler,
+  toInjectedHandler,
+  toInjectedErrorHandler 
+};
